@@ -1,5 +1,16 @@
+import PageLayout, { LayoutSection } from "../components/PageLayout";
+
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <PageLayout
+      title="Sweet Escape"
+      subtitle="Track your sugar-free journey, one day at a time."
+    >
+      <LayoutSection label="Current streak" />
+      <LayoutSection label="Daily check-in" />
+      <LayoutSection label="Today's progress" />
+    </PageLayout>
+  );
 }
 
 export default Home;

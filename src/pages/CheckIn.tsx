@@ -1,5 +1,12 @@
+import PageLayout from "../components/PageLayout";
+
 function CheckIn() {
-  return <h1>Check-In</h1>;
+  return (
+    <PageLayout
+      title="Daily Check-in"
+      subtitle="Reflect on your day, mood, and cravings."
+    />
+  );
 }
 
 export default CheckIn;
