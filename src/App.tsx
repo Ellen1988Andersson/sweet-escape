@@ -7,6 +7,8 @@ import Profile from "./pages/Profile";
 import CheckIn from "./pages/CheckIn";
 import Start from "./pages/Start";
 
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +23,8 @@ function App() {
             <Route path="/start" element={<Start />} />
           </Routes>
         </main>
+
+        <Navbar />
       </div>
     </BrowserRouter>
   );
