@@ -1,33 +1,48 @@
-type CardVariant = "sage" | "dark" | "mint" | "amber" | "white";
+import type { BadgeVariant, SurfaceVariant } from "./PageLayout";
 
 interface CardProps {
+	badge?: string;
+	badgeVariant?: BadgeVariant;
 	children: React.ReactNode;
-	variant?: CardVariant;
 	className?: string;
-	as?: "section" | "article" | "div";
+	variant?: SurfaceVariant;
 }
 
-// Reusable base card matching the Sweet Escape color palette
 const Card: React.FC<CardProps> = ({
+	badge,
+	badgeVariant = "white",
 	children,
-	variant = "sage",
 	className = "",
-	as: Component = "section",
+	variant = "white",
 }) => {
-	const variantStyles: Record<CardVariant, string> = {
-		sage: "bg-[#E5EEE9] text-[#163B32]",
-		dark: "bg-[#163B32] text-white",
-		mint: "bg-[#9affc7] text-[#163B32]",
-		amber: "bg-[#F4A261] text-[#163B32]",
-		white: "bg-white text-[#163B32]",
+	const variantStyles: Record<SurfaceVariant, string> = {
+		white: "bg-white text-[#24483D] border border-[#EAEDE5] shadow-xs",
+		dark: "bg-[#24483D] text-white",
+		teal: "bg-[#DCEBE1] text-[#24483D]",
+		sand: "bg-[#EAE4D7] text-[#24483D]",
+	};
+
+	const badgeStyles: Record<BadgeVariant, string> = {
+		white: "bg-white/85 text-[#24483D]",
+		teal: "bg-[#DCEBE1] text-[#24483D]",
+		amber: "bg-[#F4A261] text-[#24483D]",
+		gold: "bg-[#E9B96E] text-[#24483D]",
+		dark: "bg-[#356B58] text-white",
+		sand: "bg-[#EAE4D7] text-[#24483D]",
+		terracotta: "bg-[#B56950] text-white",
 	};
 
 	return (
-		<Component
-			className={`rounded-4xl p-6 ${variantStyles[variant]} ${className}`}
-		>
+		<div className={`rounded-4xl p-6 ${variantStyles[variant]} ${className}`}>
+			{badge && (
+				<span
+					className={`mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${badgeStyles[badgeVariant]}`}
+				>
+					{badge}
+				</span>
+			)}
 			{children}
-		</Component>
+		</div>
 	);
 };
 
