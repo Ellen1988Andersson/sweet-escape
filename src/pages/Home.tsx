@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 
 import Button from "../components/Button";
 import PageLayout, { LayoutSection } from "../components/PageLayout";
+import StatTile from "../components/StatTile";
 
 const Home: React.FC = () => {
 	return (
@@ -56,10 +57,31 @@ const Home: React.FC = () => {
 
 			{/* Section 3: Today's progress */}
 			<LayoutSection label="Today's progress" badgeVariant="dark" variant="teal">
-				<p className="text-sm font-medium text-[#24483D]/80">
-					Your daily stats and XP will appear here once you start your first
-					goal.
+				<h2 className="text-lg font-bold text-[#24483D]">Keep going!</h2>
+				<p className="mt-1 text-sm text-[#24483D]/80">
+					Every small step makes a difference.
 				</p>
+
+				<div className="mt-5 grid grid-cols-3 gap-3">
+					<StatTile
+						icon="solar:check-circle-bold"
+						iconColor="text-[#6A746E]"
+						value="Pending"
+						label="Check-in"
+					/>
+					<StatTile
+						icon="solar:fire-bold"
+						iconColor="text-[#F4A261]"
+						value={0}
+						label="Streak days"
+					/>
+					<StatTile
+						icon="solar:stars-bold"
+						iconColor="text-[#E9B96E]"
+						value={0}
+						label="Total XP"
+					/>
+				</div>
 			</LayoutSection>
 		</PageLayout>
 	);
