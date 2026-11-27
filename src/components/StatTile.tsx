@@ -5,7 +5,7 @@ interface StatTileProps {
 	iconColor?: string;
 	value: string | number;
 	label: string;
-	variant?: "white" | "sand" | "teal";
+	variant?: "white" | "cream" | "teal";
 }
 
 const StatTile: React.FC<StatTileProps> = ({
@@ -13,11 +13,11 @@ const StatTile: React.FC<StatTileProps> = ({
 	iconColor = "text-[#24483D]",
 	value,
 	label,
-	variant = "white",
+	variant = "cream",
 }) => {
 	const variantStyles: Record<NonNullable<StatTileProps["variant"]>, string> = {
 		white: "bg-white border border-[#EAEDE5] text-[#24483D]",
-		sand: "bg-[#EAE4D7] text-[#24483D]",
+		cream: "bg-[#F7F5EF] border border-[#CFE0D6] text-[#24483D]",
 		teal: "bg-[#DCEBE1] text-[#24483D]",
 	};
 

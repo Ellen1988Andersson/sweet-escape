@@ -42,9 +42,9 @@ const Home: React.FC = () => {
 					earning XP.
 				</p>
 
-				<div className="mt-5">
+				<div className="mt-5 flex justify-end">
 					<Button to="/start" variant="secondary">
-						Start your journey
+						Start
 						<Icon
 							icon="solar:arrow-right-linear"
 							width={18}
@@ -64,22 +64,25 @@ const Home: React.FC = () => {
 
 				<div className="mt-5 grid grid-cols-3 gap-3">
 					<StatTile
-						icon="solar:check-circle-bold"
-						iconColor="text-[#6A746E]"
+						icon="solar:clock-circle-bold"
+						iconColor="text-[#F4A261]"
 						value="Pending"
 						label="Check-in"
+						variant="cream"
 					/>
 					<StatTile
 						icon="solar:fire-bold"
 						iconColor="text-[#F4A261]"
 						value={0}
 						label="Streak days"
+						variant="cream"
 					/>
 					<StatTile
 						icon="solar:stars-bold"
-						iconColor="text-[#E9B96E]"
+						iconColor="text-[#D49A32]"
 						value={0}
 						label="Total XP"
+						variant="cream"
 					/>
 				</div>
 			</LayoutSection>

@@ -26,16 +26,16 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
 	const variantStyles: Record<ButtonVariant, string> = {
 		primary:
-			"bg-[#163B32] text-white border border-transparent hover:bg-[#245C48] disabled:opacity-50 disabled:pointer-events-none",
+			"bg-[#24483D] text-white border border-transparent hover:bg-[#2E8B67] disabled:opacity-50 disabled:pointer-events-none",
 		secondary:
-			"bg-[#E8E5DC] text-[#163B32] border border-transparent hover:bg-[#D7DDD8] disabled:opacity-50 disabled:pointer-events-none",
+			"bg-[#F4A261] text-[#24483D] border border-transparent hover:bg-[#2E8B67] hover:text-white disabled:opacity-50 disabled:pointer-events-none",
 		outline:
-			"bg-transparent text-[#163B32] border border-[#163B32] hover:bg-[#163B32] hover:text-white hover:border-transparent disabled:opacity-50 disabled:pointer-events-none",
+			"bg-transparent text-[#24483D] border border-[#24483D] hover:bg-[#24483D] hover:text-white hover:border-transparent disabled:opacity-50 disabled:pointer-events-none",
 		ghost:
-			"bg-transparent text-[#163B32] border border-transparent hover:bg-[#E5EEE9] underline underline-offset-4",
+			"bg-transparent text-[#24483D] border border-transparent hover:bg-[#DCEBE1] underline underline-offset-4",
 	};
 
-	const baseStyles = `inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 font-semibold transition-all active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#163B32] ${variantStyles[variant]} ${className}`;
+	const baseStyles = `inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F4A261] ${variantStyles[variant]} ${className}`;
 
 	if (to) {
 		return (
